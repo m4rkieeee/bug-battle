@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Bug Battle @ Mentor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <div class="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-12">
+    <div class="w-full max-w-4xl mx-auto">
+
+      <h1 class="text-3xl font-bold mb-4">🪲 Bug Battle @ Mentor</h1>
+      <p class="text-lg text-gray-700 mb-8">
+        Welkom bij de Bug Battle! Vorm een team, open een challenge, en los zoveel mogelijk bugs op binnen 60 minuten.
+      </p>
+
+      <div class="bg-white rounded-lg shadow p-6 mb-10">
+        <h2 class="text-xl font-semibold mb-2">Hoe werkt het?</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Je team kiest één challenge tegelijk</li>
+          <li>Los het probleem op (code, uitleg of fix)</li>
+          <li>Noteer je antwoord op het scoreformulier</li>
+          <li>Elke goede oplossing = punten!</li>
+        </ul>
+      </div>
+
+      <div class="text-sm text-gray-600 mb-10 italic">
+        🔐 Tip: je kunt ook <a href="/admin/" class="text-blue-600 hover:underline">inloggen in de admin</a> om trainingsdata of inschrijvingen te bekijken.
+        <br>
+        <small>username: admin</small><br>
+        <small>password: iFixBugsAtNight</small>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+        <a href="{% url 'signup' %}" class="block bg-blue-100 hover:bg-blue-200 rounded-lg p-4 shadow transition">
+          <h3 class="text-lg font-bold">Challenge 1 - Responsiveness BUG</h3>
+          <small>Gebruikers die zich willen inschrijven kunnen de knop niet zien, los jij dit op?</small>
+        </a>
+
+        <a href="{% url 'track_overview' %}" class="block bg-blue-100 hover:bg-blue-200 rounded-lg p-4 shadow transition">
+          <h3 class="text-lg font-bold">Challenge 2 – De spookstudent</h3>
+          <small>Ook de uitgeschreven studenten komen terug in het lijstje, los jij dit mysterie op?</small>
+        </a>
+
+        <a href="{% url 'challenge_3' %}" class="block bg-blue-100 hover:bg-blue-200 rounded-lg p-4 shadow transition">
+          <h3 class="text-lg font-bold">Challenge 3 – De knop die tegenstribbelt</h3>
+          <small>De knop is zichtbaar, en hij lijkt te werken. Maar zodra je erop wil klikken, verdwijnt hij naar een andere plek op het scherm.
+            <br>Hoe kun je dit debuggen? En: hoe zou je hem tóch kunnen aanklikken?</small>
+        </a>
+
+        <a href="{% url 'questions' %}" class="block bg-blue-100 hover:bg-blue-200 rounded-lg p-4 shadow transition">
+          <h3 class="text-lg font-bold">Challenge 4 - Te veel evaluatievragen (intermediate)</h3>
+          <small>
+            Het formulier slaat nu niks op, zorg ervoor dat ook de antwoorden opgeslagen kunnen worden.
+          </small>
+        </a>
+
+        <div class="block bg-gray-100 rounded-lg p-4 border-dashed border-2 border-gray-300 text-center col-span-full">
+          <span class="text-gray-500 italic">Meer challenges worden tijdens de sessie uitgedeeld</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

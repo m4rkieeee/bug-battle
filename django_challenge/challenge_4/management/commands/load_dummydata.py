@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand
 from django.utils import timezone
 from datetime import timedelta
 from challenge_4.models import LessonType, Lesson, EvaluationQuestion
-
+from challenge_2.models import Training, TrainingSubscription
 
 class Command(BaseCommand):
     help = "Laadt dummydata in voor evaluatie: lesstypes, lessen en vragen"
@@ -68,8 +68,22 @@ class Command(BaseCommand):
                 lesson_type=lesson_type_objs[type_code]
             )
 
-        user, created = User.objects.get_or_create(username="admin")
+        user, created = User.objects.get_or_create(username="admin", is_superuser=True, is_staff=True)
 
         user.set_password("iFixBugsAtNight")
+
+        training = Training.objects.create(name="Python Beginners")
+        training2 = Training.objects.create(name="Bug Hunt for Beginners")
+        training3 = Training.objects.create(name="Training die ik nog moet vormgeven.")
+
+        u1 = User.objects.create_user("alice")
+        u2 = User.objects.create_user("bob")
+        u3 = User.objects.create_user("carla")
+
+        TrainingSubscription.objects.create(student=u1, training=training, subscribed=True)
+        TrainingSubscription.objects.create(student=u1, training=training2, subscribed=True)
+        TrainingSubscription.objects.create(student=u2, training=training, subscribed=False)
+        TrainingSubscription.objects.create(student=u2, training=training2, subscribed=False)
+        TrainingSubscription.objects.create(student=u3, training=training, subscribed=True)
 
         self.stdout.write(self.style.SUCCESS("✅ Dummydata succesvol aangemaakt."))

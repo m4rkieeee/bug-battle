@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Overzicht – {{ training.name }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-gray-100 text-gray-900">
+  {% for training in training_qs %}
+    <div class="max-w-2xl mx-auto py-12 px-4">
+      <h1 class="text-2xl font-bold mb-4">Overzicht studenten: {{ training.name }}</h1>
+
+      <ul class="bg-white rounded-lg shadow p-4 space-y-2">
+        {% for student in training.subscriptions.all %}
+          <li class="text-gray-800">👤 {{ student }}</li>
+        {% empty %}
+          <li class="text-gray-500 italic">Geen studenten gevonden.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+
+</body>
+</html>

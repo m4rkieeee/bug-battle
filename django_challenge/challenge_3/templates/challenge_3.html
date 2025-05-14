@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenge 6 – De Onvoorspelbare Knop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { height: 100vh; margin: 0; overflow: hidden; position: relative; }
+    #signup-btn { transition: all 0.2s ease-in-out; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <a href="/" id="signup-btn" class="absolute px-4 py-2 rounded text-white shadow-lg">
+    Terug naar home
+  </a>
+
+  <script>
+    const btn = document.getElementById("signup-btn");
+
+    function randomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function randomColor() {
+      const r = randomInt(0, 255);
+      const g = randomInt(0, 255);
+      const b = randomInt(0, 255);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    function moveButton() {
+      const x = randomInt(0, window.innerWidth - 120);
+      const y = randomInt(0, window.innerHeight - 40);
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+      btn.style.backgroundColor = randomColor();
+    }
+
+    // Startpositie
+    moveButton();
+
+    btn.addEventListener("mouseenter", moveButton);
+  </script>
+
+</body>
+</html>
