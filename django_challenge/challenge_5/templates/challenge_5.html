@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Hunt - Cursusadmin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+
+  <div class="max-w-2xl w-full bg-white rounded-xl shadow-md p-8 space-y-6">
+    <h1 class="text-2xl font-bold text-gray-900">🛠️ Bug Hunt: Cursusadministratie</h1>
+    <p class="text-gray-600">Je bent de cursusbeheerder. Voeg studenten toe, verwijder ze of koppel een cursus. Maar... er zitten bugs in het systeem!</p>
+
+    <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+      <input
+        id="studentName"
+        type="text"
+        placeholder="Naam student"
+        class="flex-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <button
+        onclick="addStudent()"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"
+      >
+        Voeg toe
+      </button>
+      <button
+        onclick="removeLastStudent()"
+        class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-lg transition"
+      >
+        Verwijder laatste
+      </button>
+      <button
+        onclick="assignCourse()"
+        class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition"
+      >
+        Koppel cursus
+      </button>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-semibold text-gray-800 mt-4 mb-2">📋 Ingeschreven studenten:</h3>
+      <ul id="studentList" class="list-disc pl-5 text-gray-700 space-y-1"></ul>
+    </div>
+
+    <div
+      id="logBox"
+      class="bg-gray-50 border border-gray-300 rounded-md p-4 h-48 overflow-y-auto font-mono text-sm"
+    >
+      <!-- foutmeldingen komen hier -->
+    </div>
+  </div>
+
+  <script>
+    let students = [];
+
+    function log(msg) {
+      const box = document.getElementById('logBox');
+      box.innerHTML += msg + '<br>';
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function addStudent() {
+      let name = document.getElementById('studentName').value;
+      if (name == "") {
+        log("❌ Geen naam ingevoerd!");
+        return;
+      }
+      students.push(name.toLowercase());
+      updateList();
+      log("✅ Student toegevoegd: " + name);
+    }
+
+    function removeLastStudent() {
+      if (students.length == 0) {
+        log("⚠️ Geen studenten om te verwijderen.");
+        return;
+      }
+      let removed = students.pop();
+      updateList();
+      log("🗑️ Verwijderd: " + removed);
+    }
+
+    function assignCourse() {
+      let randomIndex = Math.round(Math.random() * students.length);
+      let student = students[randomIndex];
+      if (!student) {
+        log("❌ Kon geen student vinden voor cursuskoppeling.");
+        return;
+      }
+      log("📚 " + student + " is nu gekoppeld aan cursus 'Python Basics'");
+    }
+
+    function updateList() {
+      let ul = document.getElementById('studentList');
+      ul.innerHTML = "";
+      for (let s of students) {
+        let li = document.createElement('li');
+        li.textContent = s;
+        ul.appendChild(li);
+      }
+    }
+  </script>
+
+</body>
+</html>

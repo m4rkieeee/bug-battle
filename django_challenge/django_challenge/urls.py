@@ -24,4 +24,6 @@ urlpatterns = [
     path('challenge-2/', include('challenge_2.urls')),
     path('challenge-3/', include('challenge_3.urls')),
     path('challenge-4/', include('challenge_4.urls')),
+    path('challenge-5/', include('challenge_5.urls')),
+    path('challenge-6/', include('challenge_6.urls')),
 ]
