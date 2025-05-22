@@ -1,90 +1,71 @@
-# Workshop: Bug Battle @ Mentor
-Doelgroep: Alumni en huidige studenten van de opleiding Software Developer
+# **🪲 Bug Battle @ Mentor**
 
-Duur: 60 minuten per ronde   
-Aantal deelnemers per groep: 2 tot 4 personen
-# Introductie voor deelnemers
+**Doelgroep:** Alumni & studenten van de opleiding Software Developer  
+**Duur per ronde:** 60 minuten  
+**Teamgrootte:** 2 tot 4 personen
 
-Welkom bij de Bug Battle!
-Vandaag ga je samen met je team terug naar je roots: de klaslokalen, de foutmeldingen, en de knipperende console die zegt dat er iets niet klopt. Alleen... dit keer zit je niet vast in een les. Je bent de held die de bugs oplost.  
+---
 
-In deze workshop krijg je een reeks foutmeldingen, kapotte code, en mysterieuze opdrachten voorgeschoteld. Aan jullie de taak om zo veel mogelijk bugs op te lossen. Elk goed antwoord levert punten op – en natuurlijk eeuwige roem in de bug-hall-of-fame.
+## **Introductie**
 
-Ready to squash some bugs?
+Welkom bij de Bug Battle\! Vorm een team, kies een challenge, en los zo veel mogelijk bugs op.
 
-# Opzet
+Vandaag ben je geen student meer, je bent de **bug fixer**.
 
-8 challenges per ronde
+Op het bord staan 6 verschillende bugs. Ieder team kiest één challenge tegelijk en probeert die zo snel én goed mogelijk op te lossen.
 
-Iedere challenge heeft een hint, een codefragment of probleemomschrijving   
-Antwoorden worden ingevuld op een scoreformulier
+Elk goed antwoord \= punten. En wie weet... eeuwige roem in de **Mentor Bug Hall of Fame**.
 
-Teams mogen overleggen en samenwerken
+---
 
-Na 50 minuten is het tijd om in te leveren en worden de winnaars bekendgemaakt
+ **Opzet**
 
-# Benodigdheden
+* Je team kiest **één challenge tegelijk**  
+* Elke challenge bevat een korte uitleg en code of hint  
+* Los het probleem op (bug, logica, layout of fix)  
+* Schrijf je antwoord op het scoreformulier  
+* Je mag als team overleggen  
+* Na 60 minuten is de ronde klaar, en tellen we de punten
 
-1 laptop per team (optioneel) – alles is ook op papier beschikbaar
+---
 
-Printjes van de 8 challenges
+## **Wat heb je nodig?**
 
-Scoreformulieren + pennen
+* 1 laptop per team *(optioneel – alles kan ook op papier)*  
+* Printjes van de 6 challenges  
+* Scoreformulieren en pennen  
+* Timer of klok in beeld
 
-Tijdwaarneming (eventueel een grote klok of beamer met timer)
+---
 
-Eventueel: whiteboard met bug-bingo
+## 
 
-# Challenges
+## **De Challenges**
 
-Challenge 1 – De onzichtbare knopJe hebt een inschrijfformulier in Mentor, maar de knop om te verzenden is ineens niet zichtbaar op mobiel.HTML/CSS-codefragment wordt getoond.Doel: Vind de oorzaak (bv. display: none; in een media query) en geef de fix.
+**Challenge 1 – Responsiveness BUG**  
+Gebruikers kunnen zich niet inschrijven op mobiel – de knop is onzichtbaar. Los jij het op?
 
-Challenge 3 – API geeft onzin terugEen student krijgt zijn aanwezigheid als "-1" terug uit de API. Wat kan er mis zijn?Python/DRF-fragment met serializer en view.Doel: Begrijpen dat afwezigheid None was maar int verwacht werd – fout zit in de validatie of defaultwaarde.
+**Challenge 2 – De spookstudent**  
+Uitgeschreven studenten blijven zichtbaar. Waar gaat het mis?
 
-Challenge 6 – Login zonder redirectGebruiker logt in via het portaal, maar komt daarna op een lege pagina.Code bevat een ontbrekende next parameter.Doel: Ontdekken dat redirect ontbreekt of faalt door ontbrekende URL-param.
+**Challenge 3 – De knop die tegenstribbelt**  
+De knop lijkt te werken, maar stuurt je naar een verkeerd scherm. Hoe krijg je 'm onder controle?
 
-# Puntentelling
+**Challenge 4 – Te veel evaluatievragen (intermediate)**  
+Het formulier slaat niets op. Kun jij zorgen dat de antwoorden goed worden verwerkt?
 
-Goede oplossing (volledig): 2 punten
+**Challenge 5 – Cursusadministratie**  
+Je kunt geen studenten toevoegen. Waar zit de fout in de invoer of de lijst?
 
-Gedeeltelijk goed: 1 punt  
-Bonusvragen: +1 per uitdaging mogelijk
+**Challenge 6 – Synchroniseer de gegevens met het boekhoudpakket**  
+De API doet raar. Kun jij de payload fixen of de validatie corrigeren?
 
-Bonusmateriaal
+---
 
-Bug Bingo (optioneel)Laat deelnemers bekende fouten afvinken zoals:
+## **Puntentelling**
 
-"final_final2_definitief_echt.py"
-
-"werkt lokaal maar niet op staging"
-
-"500 zonder foutmelding"
-
-"comment met: // TODO: fix later"
-
-"commit message: 'fixes everything'"
-
-Mini-certificaatVoor elk team kun je printen:"Certified Bug Hunters – Mentor Alumni Editie"
-
-Afsluiting
-
-Sluit af met een korte terugblik. Vraag eventueel:
-
-Welke bug was het moeilijkst?
-
-Wie herkende zichzelf in een van de fouten?
-
-Heeft iemand z’n eigen bug ooit op productie gezet? (hand opsteken)
-
-En natuurlijk: uitreiking van het prijsje voor het winnende team.
-
-PDF-versie bevat:
-
-Volledige set van 8 bug challenges met fragmenten
-
-Printbare scorekaart
-
-Printbare certificaat-template
-
-Eventuele slides voor intro en afsluiting
+| Oplossing            | Punten |
+|:---------------------|:-------|
+| Volledig correct     | 2      |
+| Gedeeltelijk correct | 1      |
 
