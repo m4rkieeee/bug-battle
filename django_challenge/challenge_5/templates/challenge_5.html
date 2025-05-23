@@ -67,7 +67,7 @@
         log("❌ Geen naam ingevoerd!");
         return;
       }
-      students.push(name.toLowercase());
+      students.push(name.toLowerCase());
       updateList();
       log("✅ Student toegevoegd: " + name);
     }
@@ -84,6 +84,7 @@
 
     function assignCourse() {
       let randomIndex = Math.round(Math.random() * students.length);
+      console.log(randomIndex)
       let student = students[randomIndex];
       if (!student) {
         log("❌ Kon geen student vinden voor cursuskoppeling.");

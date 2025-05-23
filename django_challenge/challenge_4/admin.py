@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import LessonType, Lesson, EvaluationQuestion
+from .models import LessonType, Lesson, EvaluationQuestion, EvaluationStudentAnswer
 
 
 @admin.register(LessonType)
@@ -21,3 +21,9 @@ class EvaluationQuestionAdmin(admin.ModelAdmin):
     list_display = ("text", "lesson_type", "active")
     list_filter = ("lesson_type", "active")
     search_fields = ("text",)
+
+@admin.register(EvaluationStudentAnswer)
+class EvaluationStudentAnswerAdmin(admin.ModelAdmin):
+    list_display = ("student", "question", "answer")
+    list_filter = ("question",)
+    search_fields = ("student",)
